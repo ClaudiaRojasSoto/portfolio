@@ -34,7 +34,7 @@ class PortfolioTest < ActionDispatch::IntegrationTest
     project.project_tags.create!(name: "React", position: 0)
     profile.experiences.create!(
       number: "01",
-      period: "2024 — Now",
+      period: "2024 - Now",
       role: "Full Stack Developer · Contractor",
       place: "East Rock Software · USA / Remote",
       summary: "Shipping features with a distributed team.",

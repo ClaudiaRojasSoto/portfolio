@@ -10,13 +10,13 @@ profile = Profile.create!(
   medium_url: "https://medium.com/@claudiarojassoto",
   role_label: "Full-stack developer",
   location_label: "Copiapó, Atacama, Chile · Working worldwide",
-  hero_summary: "From first idea to production. I turn complex problems into thoughtful, scalable experiences — across the entire stack.",
+  hero_summary: "From first idea to production. I turn complex problems into thoughtful, scalable experiences, across the entire stack.",
   availability_label: "Available for select projects",
   remote_availability_label: "Available for remote opportunities",
   about_caption: "Curiosity\nmeets craft.",
   about_photo_credit: "Photo: Mikhail Fesenko / Unsplash",
-  about_lead: "My path into tech wasn't linear — and that's exactly my advantage.",
-  about_body: "Before software, I spent two decades in education and communication. Today, I bring that experience into every product: asking better questions, making complexity understandable, and building with people — not just requirements — in mind."
+  about_lead: "My path into tech wasn't linear, and that's exactly my advantage.",
+  about_body: "Before software, I spent two decades in education and communication. Today, I bring that experience into every product: asking better questions, making complexity understandable, and building with people, not just requirements, in mind."
 )
 
 [
@@ -38,7 +38,7 @@ end
   {
     variant: "otto",
     number: "01",
-    eyebrow: "Product engineering · 2024—Now",
+    eyebrow: "Product engineering · 2024 - Now",
     title: "OTTO",
     summary: "Building production-ready features across the stack for a US startup, from product decisions to reliable implementation.",
     url: "https://www.opentotheoffer.com/",
@@ -80,11 +80,11 @@ end
 end
 
 [
-  [ "01", "2024 — Now", "Full Stack Developer · Contractor", "East Rock Software · USA / Remote",
+  [ "01", "2024 - Now", "Full Stack Developer · Contractor", "East Rock Software · USA / Remote",
     "Shipping scalable product features for OTTO with a distributed US team, owning work across the complete software lifecycle." ],
-  [ "02", "2023 — Now", "Independent Full Stack Developer", "Self-employed · Global / Remote",
+  [ "02", "2023 - Now", "Independent Full Stack Developer", "Self-employed · Global / Remote",
     "60+ projects delivered across interfaces, APIs, databases and deployment, with an emphasis on clear collaboration and maintainable systems." ],
-  [ "03", "2023 — Now", "Developer Mentor", "Microverse · Volunteer",
+  [ "03", "2023 - Now", "Developer Mentor", "Microverse · Volunteer",
     "Helping international developers grow through weekly code reviews, pair programming, career guidance and practical technical support." ]
 ].each_with_index do |(number, period, role, place, summary), position|
   profile.experiences.create!(number:, period:, role:, place:, summary:, position:)
