@@ -22,7 +22,7 @@ profile = Profile.create!(
 [
   [ "03+", "Years building", "for the web" ],
   [ "60+", "Projects", "completed" ],
-  [ "C2", "English", "proficiency" ]
+  [ "B2/C1", "English", "proficiency" ]
 ].each_with_index do |(value, primary_line, secondary_line), position|
   profile.proof_points.create!(value:, primary_line:, secondary_line:, position:)
 end
