@@ -1,5 +1,6 @@
 import type { Profile, ProofPoint } from '../types/portfolio.ts'
 import { ArrowRight, DownloadIcon } from './icons.tsx'
+import { linkOpenProps } from '../lib/safeUrl.ts'
 import { SafeLink } from './SafeLink.tsx'
 
 type HeroProps = {
@@ -30,7 +31,7 @@ export function Hero({ profile, proof }: HeroProps) {
           <a className="button-primary" href="#work">
             Explore my work <ArrowRight />
           </a>
-          <SafeLink className="button-text" href={profile.resume_path} download>
+          <SafeLink className="button-text" href={profile.resume_path} {...linkOpenProps(profile.resume_path)}>
             Download résumé <DownloadIcon />
           </SafeLink>
         </div>

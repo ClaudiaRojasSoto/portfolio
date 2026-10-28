@@ -1,5 +1,6 @@
 import type { Experience as ExperienceItem, Profile } from '../types/portfolio.ts'
 import { DownloadIcon } from './icons.tsx'
+import { linkOpenProps } from '../lib/safeUrl.ts'
 import { SafeLink } from './SafeLink.tsx'
 
 type ExperienceProps = {
@@ -19,7 +20,7 @@ export function Experience({ profile, items }: ExperienceProps) {
             <em>made an impact.</em>
           </h2>
         </div>
-        <SafeLink className="button-text" href={profile.resume_path} download>
+        <SafeLink className="button-text" href={profile.resume_path} {...linkOpenProps(profile.resume_path)}>
           Full résumé <DownloadIcon />
         </SafeLink>
       </div>
