@@ -1,6 +1,6 @@
 # Claudia Rojas — portfolio
 
-React renders the Figma layout. Profile, projects, experience, and stack live in PostgreSQL and are served by a Rails API.
+Personal portfolio. React renders the site. Profile, projects, experience, and stack live in PostgreSQL and are served by a Rails API.
 
 ## Requirements
 
