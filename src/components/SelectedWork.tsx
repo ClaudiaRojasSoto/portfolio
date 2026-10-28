@@ -96,17 +96,11 @@ function MetricksVisual({ number }: { number: string }) {
 function RentalVisual({ number }: { number: string }) {
   return (
     <div className="project-visual">
-      <div className="rental-ui">
-        <span className="rental-label">READY WHEN YOU ARE</span>
-        <div className="car-shape">
-          <b />
-          <b />
-        </div>
-        <div className="rental-bottom">
-          <strong>Find your drive.</strong>
-          <span>01 / 04</span>
-        </div>
-      </div>
+      <img
+        className="rental-shot"
+        src="/car-rental.jpg"
+        alt="Car rental welcome screen"
+      />
       <span className="project-number">{number}</span>
     </div>
   )

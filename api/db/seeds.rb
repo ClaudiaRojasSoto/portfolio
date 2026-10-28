@@ -61,7 +61,7 @@ end
     eyebrow: "Full-stack platform · Independent",
     title: "CAR RENTAL",
     summary: "A responsive booking experience designed around simple discovery, confident decisions, and a frictionless rental flow.",
-    url: "https://github.com/ClaudiaRojasSoto",
+    url: "https://github.com/ClaudiaRojasSoto/Final-Capstone-Back-End",
     link_label: "View work on GitHub",
     tags: [ "Full stack", "REST API", "SQL", "Responsive" ]
   }

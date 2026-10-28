@@ -500,73 +500,20 @@ button { cursor: pointer; }
   box-shadow: -16px 20px 0 rgba(16, 16, 15, 0.14);
 }
 
-.rental .project-visual { background: var(--p-orange); }
-
-.rental-ui {
-  width: 75%;
-  height: 72%;
-  padding: 27px;
-  background: #171717;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: rotate(2deg);
+.rental .project-visual {
+  background: var(--p-orange);
+  min-height: 0;
+  padding: 58px 52px 52px 36px;
 }
 
-.rental-label {
-  color: var(--p-orange);
-  font: 500 8px/1 var(--p-mono);
-  letter-spacing: 0.13em;
+.rental-shot {
+  display: block;
+  width: min(100%, 780px);
+  height: auto;
+  border-radius: 18px;
+  transform: rotate(-1.6deg);
+  box-shadow: 16px 20px 0 rgba(16, 16, 15, 0.14);
 }
-
-.car-shape {
-  position: relative;
-  height: 120px;
-  margin: auto 0;
-  border-bottom: 3px solid var(--p-paper);
-}
-
-.car-shape::before {
-  content: "";
-  position: absolute;
-  width: 75%;
-  height: 50px;
-  bottom: 5px;
-  left: 12%;
-  border: 3px solid var(--p-paper);
-  border-radius: 65% 45% 10px 10px;
-  transform: skewX(-8deg);
-}
-
-.car-shape::after {
-  content: "";
-  position: absolute;
-  width: 38%;
-  height: 42px;
-  left: 31%;
-  bottom: 49px;
-  border: 3px solid var(--p-paper);
-  border-bottom: 0;
-  transform: skewX(-20deg);
-}
-
-.car-shape b {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border: 5px solid var(--p-paper);
-  background: #171717;
-  border-radius: 50%;
-  bottom: -16px;
-  left: 22%;
-  z-index: 2;
-}
-
-.car-shape b:last-child { left: auto; right: 19%; }
-
-.rental-bottom { display: flex; align-items: flex-end; justify-content: space-between; }
-.rental-bottom strong { font: 500 22px/1 var(--p-display); }
-.rental-bottom span { color: #777; font: 400 8px/1 var(--p-mono); }
 
 .about-section {
   display: grid;
@@ -869,12 +816,14 @@ button { cursor: pointer; }
 
 @media (max-width: 900px) {
   .otto .project-visual,
-  .metricks .project-visual { padding: 48px 22px 32px; }
+  .metricks .project-visual,
+  .rental .project-visual { padding: 48px 22px 32px; }
 }
 
 @media (max-width: 620px) {
   .otto .project-visual,
-  .metricks .project-visual { padding: 46px 14px 24px; }
+  .metricks .project-visual,
+  .rental .project-visual { padding: 46px 14px 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
