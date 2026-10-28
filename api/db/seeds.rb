@@ -41,6 +41,8 @@ end
     eyebrow: "Product engineering · 2024—Now",
     title: "OTTO",
     summary: "Building production-ready features across the stack for a US startup, from product decisions to reliable implementation.",
+    url: "https://www.opentotheoffer.com/",
+    link_label: "Visit the product",
     tags: [ "React", "Node.js", "APIs", "Testing" ]
   },
   {
@@ -49,6 +51,8 @@ end
     eyebrow: "Analytics dashboard · Independent",
     title: "METRICKS",
     summary: "A data-focused dashboard that turns complex metrics into clear, actionable views for faster decision-making.",
+    url: "https://github.com/ClaudiaRojasSoto",
+    link_label: "View work on GitHub",
     tags: [ "JavaScript", "React", "Data viz", "UX" ]
   },
   {
@@ -57,11 +61,13 @@ end
     eyebrow: "Full-stack platform · Independent",
     title: "CAR RENTAL",
     summary: "A responsive booking experience designed around simple discovery, confident decisions, and a frictionless rental flow.",
+    url: "https://github.com/ClaudiaRojasSoto",
+    link_label: "View work on GitHub",
     tags: [ "Full stack", "REST API", "SQL", "Responsive" ]
   }
 ].each_with_index do |attributes, position|
   tags = attributes.delete(:tags)
-  project = profile.projects.create!(attributes.merge(url: profile.github_url, position:))
+  project = profile.projects.create!(attributes.merge(position:))
   tags.each_with_index { |name, tag_position| project.project_tags.create!(name:, position: tag_position) }
 end
 

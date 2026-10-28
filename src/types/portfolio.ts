@@ -39,6 +39,7 @@ export type Project = {
   title: string
   summary: string
   url: string
+  link_label: string
   tags: string[]
 }
 

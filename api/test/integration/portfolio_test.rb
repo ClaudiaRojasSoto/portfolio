@@ -27,7 +27,8 @@ class PortfolioTest < ActionDispatch::IntegrationTest
       eyebrow: "Product engineering",
       title: "OTTO",
       summary: "Production features for a US startup.",
-      url: profile.github_url,
+      url: "https://www.opentotheoffer.com/",
+      link_label: "Visit the product",
       position: 0
     )
     project.project_tags.create!(name: "React", position: 0)
@@ -47,6 +48,8 @@ class PortfolioTest < ActionDispatch::IntegrationTest
     assert_equal "claudiarojassoto@gmail.com", body.dig("profile", "email")
     assert_equal "REACT", body.dig("skills", 0)
     assert_equal "OTTO", body.dig("projects", 0, "title")
+    assert_equal "https://www.opentotheoffer.com/", body.dig("projects", 0, "url")
+    assert_equal "Visit the product", body.dig("projects", 0, "link_label")
     assert_equal [ "React" ], body.dig("projects", 0, "tags")
     assert_equal "East Rock Software · USA / Remote", body.dig("experience", 0, "place")
   end

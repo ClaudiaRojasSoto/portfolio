@@ -7,5 +7,5 @@ class Project < ApplicationRecord
   has_many :project_tags, -> { order(:position) }, dependent: :destroy
 
   validates :variant, inclusion: { in: VARIANTS }
-  validates :number, :eyebrow, :title, :summary, :url, presence: true
+  validates :number, :eyebrow, :title, :summary, :url, :link_label, presence: true
 end

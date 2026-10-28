@@ -38,7 +38,7 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                 ))}
               </ul>
               <a href={project.url} target="_blank" rel="noreferrer noopener">
-                View work on GitHub <ArrowRight />
+                {project.link_label} <ArrowRight />
               </a>
             </div>
           </article>

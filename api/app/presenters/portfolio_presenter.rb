@@ -46,6 +46,7 @@ class PortfolioPresenter
       title: project.title,
       summary: project.summary,
       url: project.url,
+      link_label: project.link_label,
       tags: ordered(project.project_tags).map(&:name)
     }
   end
