@@ -51,7 +51,7 @@ end
     eyebrow: "Analytics dashboard · Independent",
     title: "METRICKS",
     summary: "A data-focused dashboard that turns complex metrics into clear, actionable views for faster decision-making.",
-    url: "https://github.com/ClaudiaRojasSoto",
+    url: "https://github.com/ClaudiaRojasSoto/Metricks_Tracker",
     link_label: "View work on GitHub",
     tags: [ "JavaScript", "React", "Data viz", "UX" ]
   },

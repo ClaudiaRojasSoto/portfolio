@@ -485,38 +485,19 @@ button { cursor: pointer; }
   box-shadow: 16px 20px 0 rgba(16, 16, 15, 0.14);
 }
 
-.metricks .project-visual { background: var(--p-lime); }
-
-.metrics-ui {
-  width: 76%;
-  height: 66%;
-  padding: 30px;
-  background: #f7f5ee;
-  color: var(--p-ink);
-  box-shadow: -22px 24px 0 rgba(16, 16, 15, 0.13);
+.metricks .project-visual {
+  background: var(--p-lime);
+  min-height: 0;
+  padding: 58px 36px 52px 52px;
 }
 
-.metrics-head { display: flex; justify-content: space-between; font: 500 10px/1 var(--p-mono); }
-.metrics-head b { color: #5648d8; font-size: 14px; }
-
-.bars {
-  height: 70%;
-  display: flex;
-  gap: 9px;
-  align-items: flex-end;
-  border-bottom: 1px solid #d6d3c8;
-  padding: 20px 0 0;
-}
-
-.bars i { flex: 1; background: #b3a8ff; }
-.bars i:nth-child(3n) { background: #5747dc; }
-
-.metrics-axis {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  color: #89867e;
-  font: 400 7px/1 var(--p-mono);
+.metricks-shot {
+  display: block;
+  width: min(100%, 780px);
+  height: auto;
+  border-radius: 18px;
+  transform: rotate(1.6deg);
+  box-shadow: -16px 20px 0 rgba(16, 16, 15, 0.14);
 }
 
 .rental .project-visual { background: var(--p-orange); }
@@ -887,11 +868,13 @@ button { cursor: pointer; }
 }
 
 @media (max-width: 900px) {
-  .otto .project-visual { padding: 48px 22px 32px; }
+  .otto .project-visual,
+  .metricks .project-visual { padding: 48px 22px 32px; }
 }
 
 @media (max-width: 620px) {
-  .otto .project-visual { padding: 46px 14px 24px; }
+  .otto .project-visual,
+  .metricks .project-visual { padding: 46px 14px 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,8 +1,6 @@
 import type { Project } from '../types/portfolio.ts'
 import { ArrowRight } from './icons.tsx'
 
-const metricBars = [42, 64, 51, 82, 67, 93, 74, 98]
-
 type SelectedWorkProps = {
   projects: Project[]
 }
@@ -76,21 +74,11 @@ function OttoVisual({ number }: { number: string }) {
 function MetricksVisual({ number }: { number: string }) {
   return (
     <div className="project-visual">
-      <div className="metrics-ui">
-        <div className="metrics-head">
-          <span>Performance</span>
-          <b>+24.8%</b>
-        </div>
-        <div className="bars">
-          {metricBars.map((height) => (
-            <i key={height} style={{ height: `${height}%` }} />
-          ))}
-        </div>
-        <div className="metrics-axis">
-          <span>MON</span>
-          <span>SUN</span>
-        </div>
-      </div>
+      <img
+        className="metricks-shot"
+        src="/metricks-tracker.jpg"
+        alt="World population map in the Metricks tracker"
+      />
       <span className="project-number">{number}</span>
     </div>
   )
