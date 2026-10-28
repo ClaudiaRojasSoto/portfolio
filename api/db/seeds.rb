@@ -43,7 +43,7 @@ end
     summary: "Building production-ready features across the stack for a US startup, from product decisions to reliable implementation.",
     url: "https://www.opentotheoffer.com/",
     link_label: "Visit the product",
-    tags: [ "React", "Node.js", "APIs", "Testing" ]
+    tags: [ "Ruby on Rails", "Hotwire", "PostgreSQL", "RSpec" ]
   },
   {
     variant: "metricks",
