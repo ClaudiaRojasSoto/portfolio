@@ -6,15 +6,18 @@ type AboutProps = {
 }
 
 export function About({ profile, values }: AboutProps) {
-  const [firstLine, secondLine] = profile.about_caption.split('\n')
+  const captionLines = profile.about_caption.split('\n').filter((line) => line.length > 0)
 
   return (
     <section className="about-section" id="about">
       <div className="about-image" role="img" aria-label="Developer working at a desk">
         <span>
-          {firstLine}
-          <br />
-          {secondLine}
+          {captionLines.map((line, index) => (
+            <span key={line}>
+              {index > 0 && <br />}
+              {line}
+            </span>
+          ))}
         </span>
         <small>{profile.about_photo_credit}</small>
       </div>

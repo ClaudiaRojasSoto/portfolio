@@ -20,11 +20,11 @@ export function ArrowRight({ size = 18 }: IconProps) {
   )
 }
 
-export function DownloadIcon() {
+export function DownloadIcon({ size = 18 }: IconProps) {
   return (
     <svg
-      width="18"
-      height="18"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

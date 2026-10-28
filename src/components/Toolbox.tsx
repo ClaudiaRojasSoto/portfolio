@@ -1,7 +1,7 @@
-import type { StackGroup } from '../types/portfolio.ts'
+import type { StackGroup as StackGroupContent } from '../types/portfolio.ts'
 
 type ToolboxProps = {
-  groups: StackGroup[]
+  groups: StackGroupContent[]
 }
 
 export function Toolbox({ groups }: ToolboxProps) {
@@ -19,35 +19,47 @@ export function Toolbox({ groups }: ToolboxProps) {
       <div className="stack-grid">
         {groups.map((group) =>
           group.featured ? (
-            <article key={group.label} className="stack-main">
-              <span>{group.label}</span>
-              <strong>
-                {group.items.map((item, index) => (
-                  <span key={item}>
-                    {index > 0 && <br />}
-                    {item}
-                  </span>
-                ))}
-              </strong>
-              <div className="code-lines" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <i />
-              </div>
-            </article>
+            <FeaturedStackGroup key={group.label} group={group} />
           ) : (
-            <article key={group.label}>
-              <span>{group.label}</span>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
+            <StackGroup key={group.label} group={group} />
           ),
         )}
       </div>
     </section>
+  )
+}
+
+function FeaturedStackGroup({ group }: { group: StackGroupContent }) {
+  return (
+    <article className="stack-main">
+      <span>{group.label}</span>
+      <strong>
+        {group.items.map((item, index) => (
+          <span key={item}>
+            {index > 0 && <br />}
+            {item}
+          </span>
+        ))}
+      </strong>
+      <div className="code-lines" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+        <i />
+      </div>
+    </article>
+  )
+}
+
+function StackGroup({ group }: { group: StackGroupContent }) {
+  return (
+    <article>
+      <span>{group.label}</span>
+      <ul>
+        {group.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </article>
   )
 }

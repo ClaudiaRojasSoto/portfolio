@@ -32,8 +32,10 @@ export type ProofPoint = {
   lines: string[]
 }
 
+export type ProjectVariant = 'otto' | 'metricks' | 'rental'
+
 export type Project = {
-  variant: 'otto' | 'metricks' | 'rental' | string
+  variant: ProjectVariant
   number: string
   eyebrow: string
   title: string

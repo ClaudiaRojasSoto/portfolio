@@ -1,4 +1,4 @@
-import type { Project } from '../types/portfolio.ts'
+import type { Project, ProjectVariant } from '../types/portfolio.ts'
 import { ArrowRight } from './icons.tsx'
 
 type SelectedWorkProps = {
@@ -46,16 +46,24 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
   )
 }
 
-function ProjectVisual({ project }: { project: Project }) {
-  if (project.variant === 'otto') return <OttoVisual number={project.number} />
-  if (project.variant === 'metricks') return <MetricksVisual number={project.number} />
-  if (project.variant === 'rental') return <RentalVisual number={project.number} />
+const projectVisuals: Record<ProjectVariant, typeof OttoVisual> = {
+  otto: OttoVisual,
+  metricks: MetricksVisual,
+  rental: RentalVisual,
+}
 
-  return (
-    <div className="project-visual">
-      <span className="project-number">{project.number}</span>
-    </div>
-  )
+function ProjectVisual({ project }: { project: Project }) {
+  const Visual = projectVisuals[project.variant]
+
+  if (!Visual) {
+    return (
+      <div className="project-visual">
+        <span className="project-number">{project.number}</span>
+      </div>
+    )
+  }
+
+  return <Visual number={project.number} />
 }
 
 function OttoVisual({ number }: { number: string }) {
