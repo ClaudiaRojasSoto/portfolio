@@ -9,7 +9,7 @@ profile = Profile.create!(
   github_url: "https://github.com/ClaudiaRojasSoto",
   medium_url: "https://medium.com/@claudiarojassoto",
   role_label: "Full-stack developer",
-  location_label: "Santiago, CL · Working worldwide",
+  location_label: "Copiapó, Atacama, Chile · Working worldwide",
   hero_summary: "From first idea to production. I turn complex problems into thoughtful, scalable experiences — across the entire stack.",
   availability_label: "Available for select projects",
   remote_availability_label: "Available for remote opportunities",
