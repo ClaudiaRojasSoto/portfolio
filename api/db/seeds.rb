@@ -4,7 +4,7 @@ profile = Profile.create!(
   name: "Claudia Rojas",
   mark: "CR",
   email: "claudiarojassoto@gmail.com",
-  resume_path: "https://drive.google.com/file/d/1pMDNk6y7LTnbgBsImabGp_gum-VStCeT/view?usp=sharing",
+  resume_path: "https://drive.google.com/file/d/1Cju8DBU0Co6uzdwSoXBb-W2oSJZDcBo2/view?usp=sharing",
   linkedin_url: "https://www.linkedin.com/in/claudia-rojas-soto/",
   github_url: "https://github.com/ClaudiaRojasSoto",
   medium_url: "https://medium.com/@claudiarojassoto",
