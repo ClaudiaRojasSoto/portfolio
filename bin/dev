@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+root="$(cd "$(dirname "$0")/.." && pwd)"
+
+cd "$root/api"
+bin/rails server -p 3000 &
+api_pid=$!
+
+cleanup() {
+  kill "$api_pid" 2>/dev/null || true
+}
+trap cleanup EXIT
+
+cd "$root"
+npm run dev
