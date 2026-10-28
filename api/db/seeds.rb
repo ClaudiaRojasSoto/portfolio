@@ -92,9 +92,9 @@ end
 
 [
   [ "CORE", true, [ "JavaScript", "TypeScript" ] ],
-  [ "FRONTEND", false, [ "React", "Vue.js", "Angular", "Tailwind CSS" ] ],
-  [ "BACKEND", false, [ "Node.js", "Ruby on Rails", "Spring Boot", "Express" ] ],
-  [ "DATA + QUALITY", false, [ "SQL / NoSQL", "Jest / JUnit", "REST APIs", "CI / CD" ] ]
+  [ "FRONTEND", false, [ "JavaScript", "React", "Vue.js", "Angular", "Tailwind CSS", "Hotwire", "Redux" ] ],
+  [ "BACKEND", false, [ "Java", "Spring Boot", "Ruby on Rails", "Node.js", "Express" ] ],
+  [ "DATA + QUALITY", false, [ "PostgreSQL", "SQL / NoSQL", "RSpec", "Jest / JUnit", "REST APIs", "CI / CD" ] ]
 ].each_with_index do |(label, featured, items), position|
   group = profile.stack_groups.create!(label:, featured:, position:)
   items.each_with_index { |name, item_position| group.stack_items.create!(name:, position: item_position) }
