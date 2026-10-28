@@ -1,4 +1,4 @@
-# Claudia Rojas — portfolio
+# Claudia Rojas, portfolio
 
 Personal portfolio. React renders the site. Profile, projects, experience, and stack live in PostgreSQL and are served by a Rails API.
 
@@ -20,7 +20,7 @@ bin/dev
 - API: http://localhost:3000/api/v1/portfolio
 - Site: http://localhost:5173
 
-The résumé link points to `public/Claudia_Rojas_CV.pdf`. Place the PDF there so the download works.
+The résumé buttons use the profile `resume_path`. The seeded value is the Google Drive file.
 
 Production also uses PostgreSQL. Set `DATABASE_URL`, or `DATABASE_USERNAME`, `DATABASE_PASSWORD`, and `DATABASE_HOST`.
 
