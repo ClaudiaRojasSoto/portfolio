@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import type { Portfolio } from '../types/portfolio.ts'
+import { portfolioSchema, type Portfolio } from '../types/portfolio.ts'
 
 type PortfolioState =
   | { status: 'loading'; data?: undefined }
@@ -26,7 +26,7 @@ export function usePortfolio() {
 
         if (!response.ok) throw new Error('Portfolio request failed')
 
-        const data = (await response.json()) as Portfolio
+        const data = portfolioSchema.parse(await response.json())
         setState({ status: 'ready', data })
       } catch (error: unknown) {
         if (error instanceof DOMException && error.name === 'AbortError') return

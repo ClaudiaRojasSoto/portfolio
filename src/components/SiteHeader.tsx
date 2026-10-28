@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { navigation } from '../content/navigation.ts'
 import type { Profile } from '../types/portfolio.ts'
 import { LinkedInIcon, MenuIcon } from './icons.tsx'
+import { SafeLink } from './SafeLink.tsx'
 
 type SiteHeaderProps = {
   profile: Profile
@@ -50,15 +51,14 @@ export function SiteHeader({ profile, activeId }: SiteHeaderProps) {
         <span className="availability">
           <i /> {profile.availability_label}
         </span>
-        <a
+        <SafeLink
           className="mini-social"
           href={profile.linkedin_url}
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="LinkedIn"
+          external
+          ariaLabel="LinkedIn"
         >
           <LinkedInIcon size={16} />
-        </a>
+        </SafeLink>
         <button
           className="menu-button"
           type="button"

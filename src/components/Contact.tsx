@@ -1,5 +1,6 @@
 import type { Profile } from '../types/portfolio.ts'
 import { ArrowRight, GitHubIcon, LinkedInIcon } from './icons.tsx'
+import { SafeLink } from './SafeLink.tsx'
 
 type ContactProps = {
   profile: Profile
@@ -21,23 +22,23 @@ export function Contact({ profile }: ContactProps) {
         I&apos;m always open to thoughtful products, ambitious teams, and conversations that could
         lead somewhere interesting.
       </p>
-      <a href={`mailto:${profile.email}`} className="contact-link">
+      <SafeLink href={`mailto:${profile.email}`} className="contact-link">
         {profile.email} <ArrowRight size={28} />
-      </a>
+      </SafeLink>
       <div className="contact-meta">
         <span>
           <i /> {profile.remote_availability_label}
         </span>
         <div>
-          <a href={profile.github_url} target="_blank" rel="noreferrer noopener">
+          <SafeLink href={profile.github_url} external>
             <GitHubIcon /> GitHub
-          </a>
-          <a href={profile.linkedin_url} target="_blank" rel="noreferrer noopener">
+          </SafeLink>
+          <SafeLink href={profile.linkedin_url} external>
             <LinkedInIcon /> LinkedIn
-          </a>
-          <a href={profile.medium_url} target="_blank" rel="noreferrer noopener">
+          </SafeLink>
+          <SafeLink href={profile.medium_url} external>
             Medium ↗
-          </a>
+          </SafeLink>
         </div>
       </div>
     </section>

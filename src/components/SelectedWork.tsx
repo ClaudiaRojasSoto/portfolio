@@ -1,5 +1,6 @@
 import type { Project, ProjectVariant } from '../types/portfolio.ts'
 import { ArrowRight } from './icons.tsx'
+import { SafeLink } from './SafeLink.tsx'
 
 type SelectedWorkProps = {
   projects: Project[]
@@ -35,9 +36,9 @@ export function SelectedWork({ projects }: SelectedWorkProps) {
                   <li key={tag}>{tag}</li>
                 ))}
               </ul>
-              <a href={project.url} target="_blank" rel="noreferrer noopener">
+              <SafeLink href={project.url} external>
                 {project.link_label} <ArrowRight />
-              </a>
+              </SafeLink>
             </div>
           </article>
         ))}

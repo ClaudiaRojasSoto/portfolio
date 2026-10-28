@@ -1,65 +1,68 @@
-export type Portfolio = {
-  profile: Profile
-  proof: ProofPoint[]
-  skills: string[]
-  projects: Project[]
-  about_values: AboutValue[]
-  experience: Experience[]
-  toolbox: StackGroup[]
-}
+import { z } from 'zod'
 
-export type Profile = {
-  name: string
-  mark: string
-  email: string
-  resume_path: string
-  linkedin_url: string
-  github_url: string
-  medium_url: string
-  role_label: string
-  location_label: string
-  hero_summary: string
-  availability_label: string
-  remote_availability_label: string
-  about_caption: string
-  about_photo_credit: string
-  about_lead: string
-  about_body: string
-}
+const linePairSchema = z.object({
+  lines: z.array(z.string()),
+})
 
-export type ProofPoint = {
-  value: string
-  lines: string[]
-}
+export const projectVariantSchema = z.enum(['otto', 'metricks', 'rental'])
 
-export type ProjectVariant = 'otto' | 'metricks' | 'rental'
+export const portfolioSchema = z.object({
+  profile: z.object({
+    name: z.string(),
+    mark: z.string(),
+    email: z.string(),
+    resume_path: z.string(),
+    linkedin_url: z.string(),
+    github_url: z.string(),
+    medium_url: z.string(),
+    role_label: z.string(),
+    location_label: z.string(),
+    hero_summary: z.string(),
+    availability_label: z.string(),
+    remote_availability_label: z.string(),
+    about_caption: z.string(),
+    about_photo_credit: z.string(),
+    about_lead: z.string(),
+    about_body: z.string(),
+  }),
+  proof: z.array(linePairSchema.extend({ value: z.string() })),
+  skills: z.array(z.string()),
+  projects: z.array(
+    z.object({
+      variant: projectVariantSchema,
+      number: z.string(),
+      eyebrow: z.string(),
+      title: z.string(),
+      summary: z.string(),
+      url: z.string(),
+      link_label: z.string(),
+      tags: z.array(z.string()),
+    }),
+  ),
+  about_values: z.array(linePairSchema.extend({ number: z.string() })),
+  experience: z.array(
+    z.object({
+      number: z.string(),
+      period: z.string(),
+      role: z.string(),
+      place: z.string(),
+      summary: z.string(),
+    }),
+  ),
+  toolbox: z.array(
+    z.object({
+      label: z.string(),
+      featured: z.boolean(),
+      items: z.array(z.string()),
+    }),
+  ),
+})
 
-export type Project = {
-  variant: ProjectVariant
-  number: string
-  eyebrow: string
-  title: string
-  summary: string
-  url: string
-  link_label: string
-  tags: string[]
-}
-
-export type AboutValue = {
-  number: string
-  lines: string[]
-}
-
-export type Experience = {
-  number: string
-  period: string
-  role: string
-  place: string
-  summary: string
-}
-
-export type StackGroup = {
-  label: string
-  featured: boolean
-  items: string[]
-}
+export type Portfolio = z.infer<typeof portfolioSchema>
+export type Profile = Portfolio['profile']
+export type ProofPoint = Portfolio['proof'][number]
+export type ProjectVariant = z.infer<typeof projectVariantSchema>
+export type Project = Portfolio['projects'][number]
+export type AboutValue = Portfolio['about_values'][number]
+export type Experience = Portfolio['experience'][number]
+export type StackGroup = Portfolio['toolbox'][number]
