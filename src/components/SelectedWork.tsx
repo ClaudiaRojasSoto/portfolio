@@ -63,22 +63,11 @@ function ProjectVisual({ project }: { project: Project }) {
 function OttoVisual({ number }: { number: string }) {
   return (
     <div className="project-visual">
-      <div className="otto-ui">
-        <div className="otto-logo">O.</div>
-        <p>
-          Open to the
-          <br />
-          <strong>right offer.</strong>
-        </p>
-        <div className="offer-row">
-          <span>Product design</span>
-          <b>92%</b>
-        </div>
-        <div className="offer-row">
-          <span>Engineering</span>
-          <b>88%</b>
-        </div>
-      </div>
+      <img
+        className="otto-shot"
+        src="/otto-product.jpg"
+        alt="OTTO property listing with personal details blurred"
+      />
       <span className="project-number">{number}</span>
     </div>
   )

@@ -470,30 +470,20 @@ button { cursor: pointer; }
 
 .project-copy a:hover { color: var(--p-lime); }
 
-.otto .project-visual { background: var(--p-violet); }
-
-.otto-ui {
-  width: 70%;
-  background: #171717;
-  padding: 31px;
-  transform: rotate(-3deg);
-  box-shadow: 25px 28px 0 rgba(16, 16, 15, 0.13);
+.otto .project-visual {
+  background: var(--p-violet);
+  min-height: 0;
+  padding: 58px 52px 52px 36px;
 }
 
-.otto-logo { color: var(--p-lime); font: 700 28px/1 var(--p-display); }
-.otto-ui p { font: 500 31px/1.1 var(--p-display); margin: 40px 0 34px; }
-.otto-ui p strong { color: var(--p-violet); }
-
-.offer-row {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #444;
-  padding: 12px 0;
-  color: #999;
-  font: 400 8px/1 var(--p-mono);
+.otto-shot {
+  display: block;
+  width: min(100%, 780px);
+  height: auto;
+  border-radius: 18px;
+  transform: rotate(-1.6deg);
+  box-shadow: 16px 20px 0 rgba(16, 16, 15, 0.14);
 }
-
-.offer-row b { color: var(--p-lime); }
 
 .metricks .project-visual { background: var(--p-lime); }
 
@@ -894,6 +884,14 @@ button { cursor: pointer; }
   .contact-meta { align-items: flex-start; gap: 25px; flex-direction: column; }
   .contact-meta > div { flex-wrap: wrap; gap: 18px; }
   .portfolio-footer { padding-block: 25px; align-items: flex-start; gap: 18px; flex-direction: column; }
+}
+
+@media (max-width: 900px) {
+  .otto .project-visual { padding: 48px 22px 32px; }
+}
+
+@media (max-width: 620px) {
+  .otto .project-visual { padding: 46px 14px 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
